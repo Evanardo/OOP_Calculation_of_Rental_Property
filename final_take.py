@@ -49,7 +49,7 @@ class Property:
         self.investment["Closing Cost"] = float(cc_value)
         rh_value = input("Please provide any Rehab cost you spent/planning to spend on the property: ")
         self.investment["Rehab"] = float(rh_value)
-    def calcROI(self):
+    def ROI(self):
         self.calcCflow()
         annualCflow = self.cashflow * 12
         total_investment = 0
@@ -57,7 +57,7 @@ class Property:
             total_investment += num
         roi = (annualCflow/total_investment) * 100
         self.result(roi)
-    def calcCflow(self):
+    def Cashflow(self):
         rental_income = 0
         expenses = 0
         for total in self.rentIncome.values():
