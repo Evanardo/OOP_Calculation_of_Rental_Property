@@ -1,3 +1,6 @@
+from tkinter import E
+
+
 class Property:
     def __init__(self):
         self.rentIncome = {}
@@ -41,7 +44,7 @@ class Property:
             gas = input("How much is your gas bill per month?: ")
             self.expenses["Gas"] = float(gas)
         else:
-            print("Good call")
+            print("Good call!")
     def theInvestment(self):
         dp_value = input("How much was your down payment?: ")
         self.investment["Down Payment"] = float(dp_value)
@@ -50,7 +53,7 @@ class Property:
         rh_value = input("Please provide any Rehab cost you spent/planning to spend on the property: ")
         self.investment["Rehab"] = float(rh_value)
     def ROI(self):
-        self.calcCflow()
+        self.Cashflow()
         annualCflow = self.cashflow * 12
         total_investment = 0
         for num in self.investment.values():
@@ -75,5 +78,5 @@ def runnit():
     ROI.incoming()
     ROI.theExpenses()
     ROI.theInvestment()
-    ROI.calcROI()
+    ROI.ROI()
 runnit()
